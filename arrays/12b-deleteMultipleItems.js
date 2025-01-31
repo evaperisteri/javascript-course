@@ -1,4 +1,4 @@
-const arr = [1, 2, 3, 2, 5, 2]
+const arr = [2, 2, 3, 2, 5, 2]
 
 //πιο ασφαλές να σβήνεις από το τέλος προς την αρχή για να μην χαθεί κάποιο στοιχείο του πίνακα
 const deleteBackwards = (arr, val) => {
@@ -14,5 +14,17 @@ const deleteBackwards = (arr, val) => {
   }
 }
 
-deleteBackwards(arr, 2)
+const deleteBackwards2 = (arr, val) => {
+  if(!arr) return       //!arr: αν δεν υπάρχει το arr
+  let i = arr.length
+
+  //η while αυτή για την θέση 0 εκκινεί.
+  while(i--){
+    if (arr[i] === val) {
+      arr.splice(i, 1)      //στη θέση i διέγραψε 1 στοιχείο
+    }
+  }
+}
+
+deleteBackwards2(arr, 2)
 console.log(arr)
